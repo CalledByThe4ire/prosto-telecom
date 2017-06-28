@@ -1,0 +1,69 @@
+// Mixins
+
+// Set element size
+@mixin size($width, $height: $width) {
+	width: $width;
+	height: $height;
+}
+
+// Set margin on left & right
+@mixin margin-x($margin) {
+	margin-right: $margin;
+	margin-left: $margin;
+}
+
+// Set margin on top & bottom
+@mixin margin-y($margin) {
+	margin-top: $margin;
+	margin-bottom: $margin;
+}
+
+// Set pading on left & right
+@mixin padding-x($padding) {
+	padding-right: $padding;
+	padding-left: $padding;
+}
+
+// Set padding on top & bottom
+@mixin padding-y($padding) {
+	padding-top: $padding;
+	padding-bottom: $padding;
+}
+
+// Set fixed ontainer
+@mixin container() {
+	min-width: $container--min;
+	max-width: $container--mid;
+	margin: 0 auto;
+}
+
+// Set fluid container
+@mixin container-fluid() {
+	width: 100%;
+	margin: 0 auto;
+}
+
+// Clear default list styles
+@mixin list-clear() {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+// Set one static retina image
+@mixin retinaBackground($image, $ext: "png") {
+	background-image: url("../images/" + $image + "." + $ext);
+
+	@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+		background-image: url("../images/" + $image + "@2x." + $ext);
+	}
+}
+
+// Ensures that the container will not collapse when all its children are floated
+@mixin clearfix() {
+	&::after {
+		display: table;
+		clear: both;
+		content: "";
+	}
+}

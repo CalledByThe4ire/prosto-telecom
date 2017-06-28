@@ -1,0 +1,9 @@
+mixin icon(iconClass, iconName, iconWidth, iconHeight, isBlock)
+	- var iconWidth = iconWidth || 'auto';
+	- var iconHeight = iconHeight || 'auto';
+	if isBlock
+		+b('svg')(class=iconClass, width=iconWidth, height=iconHeight)&attributes(attributes)
+			use(xlink:href='images/icon.svg#icon_#{iconName}')
+	else
+		+e('svg')(class='__#{iconClass}', width=iconWidth, height=iconHeight)&attributes(attributes)
+			use(xlink:href='images/icon.svg#icon_#{iconName}')

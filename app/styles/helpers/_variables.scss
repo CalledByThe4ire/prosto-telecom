@@ -1,0 +1,51 @@
+// Variables
+// ==========================================================================
+
+// == Colors
+//
+
+$color-primary:            #123885 !default;
+$color-secondary:          #fff200 !default;
+
+$text-color:               #343434 !default;
+$text-color--lighter:      lighten($text-color, 50%);
+
+$bg-body:                  #f7f7f7 !default;
+
+$link-color:               $text-color--lighter;
+$link-color--hover:        $color-primary;
+$link-color--active:       $color-secondary;
+
+// == Typography
+//
+$font-size:                1.6rem !default;
+/* stylelint-disable */
+$font-family--sans-serif:  "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-family--serif:       Georgia, "Times New Roman", Times, serif;
+$font-family--monospace:   "Courier New", Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+/* stylelint-enable */
+
+$font-family:              $font-family--sans-serif !default;
+
+// == Media queries breakpoints
+//
+$portable:                  "only screen and (min-width: 320px) and (max-width: 779px)";
+$tab-desk:                  "only screen and (min-width: 780px) and (max-width: 1072px)";
+
+$retina2x:                  "(min-resolution: 1.5dppx)";
+
+// == Container sizes
+//
+$container--min:           32rem !default;
+$container--mid:           78rem !default;
+$container--max:           107.2rem !default;
+
+// == Paddings and margins
+//
+$offset:                   2.4rem !default;
+
+// == Lost
+// https://github.com/peterramsing/lost
+/* stylelint-disable */
+@lost flexbox              flex
+/* stylelint-enable */
