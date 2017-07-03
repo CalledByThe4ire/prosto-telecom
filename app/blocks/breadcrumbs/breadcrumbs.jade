@@ -1,0 +1,7 @@
+mixin breadcrumbs()
+	- list = ['О компании', 'Новости', 'Вакансии', 'Контакты'];
+	+b.breadcrumbs&attributes(attributes)
+		+e('ul').list
+			each item, index in list
+				+e.item
+					+e('a').link(href='#') !{item}

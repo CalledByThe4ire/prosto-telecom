@@ -1,0 +1,17 @@
+include ../input-toggle/input-toggle
+include ../nav/nav
+include ../list/list
+
+mixin offers()
+	+b.offers(data-js='offers')&attributes(attributes)
+		+e.fieldset--toggle(role='group')
+			+input-toggle(getData('offers-toggle'))
+		+nav
+			+list(getData('business-offers'))(class='--business __list')
+			+list(getData('home-offers'))(class='--home __list')
+
+		+breadcrumbs
+		+user-interaction
+		+e.fieldset--cities(role='group')
+			+cities(getData('cities'))
+

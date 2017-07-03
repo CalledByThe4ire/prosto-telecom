@@ -1,0 +1,12 @@
+.offers {
+	min-height: 100vh;
+
+	&__fieldset {
+		display: flex;
+
+		&--toggle {
+			position: absolute;
+			top: 0;
+		}
+	}
+}

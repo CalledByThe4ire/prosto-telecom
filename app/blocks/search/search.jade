@@ -1,0 +1,5 @@
+mixin search()
+	+b.search&attributes(attributes)
+		+e('a').trigger(href='#', data-js='search-trigger')
+			+e('img').image(src='assets/images/icon-search.png', srcset= 'assets/images/icon-search@2x.png 2x', width='34', height='34', alt='Search')
+			+e('form').form(action='/hello', method='post', data-js='search-form')

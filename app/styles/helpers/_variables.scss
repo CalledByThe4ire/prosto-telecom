@@ -30,7 +30,8 @@ $font-family:              $font-family--sans-serif !default;
 // == Media queries breakpoints
 //
 $portable:                  "only screen and (min-width: 320px) and (max-width: 779px)";
-$tab-desk:                  "only screen and (min-width: 780px) and (max-width: 1072px)";
+$tab-desk:                  "only screen and (min-width: 780px) and (max-width: 1071px)";
+$desktop:                   "only screen and (min-width: 1072px)";
 
 $retina2x:                  "(min-resolution: 1.5dppx)";
 

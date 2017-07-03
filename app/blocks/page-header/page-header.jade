@@ -1,0 +1,8 @@
+mixin page-header()
+	+b('header').page-header--colorized&attributes(attributes)
+		+e.logo--hidden
+			+e('a').link--hidden(href='index.html')
+				img(src='assets/images/logo.png', srcset= 'assets/images/logo@2x.png 2x', width='198', height='47', alt='Prosto Telecom')
+				+e('a').toggle--close(data-js='offers-toggle', href='javascript:void(0)', onclick='return false')
+					+e.icon
+		block

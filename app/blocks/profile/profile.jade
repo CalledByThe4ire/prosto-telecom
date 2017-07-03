@@ -1,0 +1,5 @@
+mixin profile()
+	+b.profile&attributes(attributes)
+		+e('a').trigger(href='#', data-js='profile-trigger')
+			+e('img').image(src='assets/images/icon-login.png', srcset= 'assets/images/icon-login@2x.png 2x', width='34', height='34', alt='Login')
+		+e('section').pop-up(data-js='profile-popup')

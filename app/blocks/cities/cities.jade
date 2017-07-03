@@ -1,0 +1,4 @@
+mixin cities(list)
+	+b('select').cities(data-js='cities')&attributes(attributes)
+		each item in list
+			+e('option').item(value=item.tel, selected=item.selected) !{item.city}

@@ -1,0 +1,23 @@
+include ../profile/profile
+include ../feedback/feedback
+include ../search/search
+
+mixin user-interaction()
+	+b.user-interaction&attributes(attributes)
+		+e('ul').list
+			- var counter = 3;
+			- for (var i = 1; i <= counter; i++) {
+				+e.item
+					case i
+						when 1
+							+profile(class='__profile')
+
+						when 2
+							+feedback(class='__feedback')
+
+						when 3
+							+search(class='__search')
+						default
+							- break
+			- }
+

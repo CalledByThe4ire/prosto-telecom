@@ -1,0 +1,99 @@
+.page-header {
+	position: relative;
+
+	@include padding-x(24px);
+
+	background-color: transparent;
+
+	&--colorized {
+		background-color: $color-primary;
+	}
+
+	&__logo {
+		position: relative;
+
+		display: flex;
+		align-items: center;
+		height: 72px;
+		justify-content: space-between;
+	}
+
+	&__icon {
+		position: relative;
+
+		width: 100%;
+		height: 4px;
+
+		background-color: $color-primary;
+
+		transition-duration: 0.3s;
+		pointer-events: none;
+
+		&::before,
+		&::after {
+			content: "";
+			position: absolute;
+			left: 0;
+
+			width: 100%;
+			height: 4px;
+
+			background-color: $color-primary;
+			transition-duration: 0.3s;
+		}
+
+		&::before {
+			top: 7px;
+		}
+
+		&::after {
+			top: -7px;
+		}
+	}
+
+	&__link {
+		&--hidden {
+			display: none;
+		}
+	}
+
+	&__toggle {
+		position: absolute;
+		top: 50%;
+		right: 0;
+
+		display: flex;
+		align-items: center;
+		width: 24px;
+		height: 18px;
+
+		transform: translateY(-50%);
+
+		@media #{$desktop} {
+			display: none;
+		}
+
+		&--close {
+			width: 30px;
+			height: 30px;
+
+			.page-header__icon {
+				background-color: transparent;
+
+				&::before,
+				&::after {
+					height: 1px;
+					background-color: #8cabe8;
+				}
+
+				&::before {
+					transform: rotate(45deg) translate(-4px, -4px);
+				}
+
+				&::after {
+					transform: rotate(-45deg) translate(-6px, 6px);
+				}
+			}
+		}
+	}
+}

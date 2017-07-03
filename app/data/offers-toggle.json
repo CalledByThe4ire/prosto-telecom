@@ -1,0 +1,16 @@
+[
+  {
+    "inputType": "radio",
+    "name": "offers-toggle",
+    "isChecked": true,
+    "isDisabled": false,
+    "label": "Для дома"
+  },
+  {
+    "inputType": "radio",
+    "name": "offers-toggle",
+    "isChecked": false,
+    "isDisabled": false,
+    "label": "Для бизнеса"
+  }
+]
