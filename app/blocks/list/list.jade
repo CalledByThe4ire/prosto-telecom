@@ -2,7 +2,9 @@ mixin list(tree)
 	+b('ul').list&attributes(attributes)
 		each item in tree
 			if item.title
-				+e('li').item
-					| !{item.title}
+				+e('li').item(data-js='#{!item.isEmpty ? "list-item" : ""}', class='#{!item.isEmpty ? "--top-level --collapsed" : ""}')
+					+e('a').link(href='#')
+						| !{item.title}
 					if item.content
 						+list(item.content)
+

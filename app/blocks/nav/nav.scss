@@ -1,3 +1,13 @@
 .nav {
 	display: block;
+
+	&__list {
+		&--visible {
+			display: block;
+		}
+
+		&--hidden {
+			display: none;
+		}
+	}
 }

@@ -1,3 +1,141 @@
 .list {
+	$root: &;
 	display: block;
+
+	@include list-clear();
+	font-size: $font-size * 0.875; // 14rem
+	line-height: 1.857142857142857; // 26rem
+	font-family: $font-family;
+	font-weight: 400;
+
+	&__item {
+		margin: 0;
+		padding: 0;
+
+		opacity: 0.8;
+
+		&--top-level {
+			position: relative;
+			font-size: $font-size;
+			line-height: 2.875; // 46rem
+
+			& #{$root} {
+				margin-bottom: 1.5rem;
+
+				transform: translateY(-1rem);
+
+				@media #{$desktop} {
+					display: none;
+				}
+			}
+
+			&::before,
+			&::after {
+				content: "";
+
+				position: absolute;
+
+				display: block;
+
+				transition-property: border-color;
+				transition-duration: 0.3s;
+
+				cursor: pointer;
+			}
+
+			&::before {
+				top: $font-size * 1.4375; //2.3rem
+				right: 0;
+				width: 20px;
+				height: 20px;
+
+				border-width: 1px;
+				border-style: solid;
+				border-color: #7a98d6;
+				border-radius: 50%;
+
+				transform: translateY(-50%);
+			}
+
+			&:hover {
+				&::before,
+				&::after {
+					border-color: $color-secondary;
+				}
+			}
+		}
+
+		&--expanded,
+		&--collapsed {
+			&::after {
+				top: $font-size * 1.1875; // 1.9rem
+				right: 0.6rem;
+
+				width: 8px;
+				height: 8px;
+
+				border-width: 2px;
+				border-style: solid;
+				border-top-color: transparent;
+				border-right-color: transparent;
+				border-left-color: #ffffff;
+				border-bottom-color: #ffffff;
+			}
+
+			&:hover {
+				&::after {
+					border-top-color: transparent;
+					border-right-color: transparent;
+				}
+			}
+		}
+
+		&--expanded {
+			&::after {
+				transform: rotate(135deg);
+			}
+		}
+
+		&--collapsed {
+			border-top-width: 1px;
+			border-top-style: solid;
+			border-top-color: rgba(#f5f5f5, 0.2);
+			opacity: 1;
+
+			&:last-child {
+				border-bottom-width: 1px;
+				border-bottom-style: solid;
+				border-bottom-color: rgba(#f5f5f5, 0.2);
+			}
+
+			&::after {
+				transform: rotate(315deg);
+			}
+		}
+	}
+
+	&__link {
+		display: block;
+
+		&:link,
+		&:visited {
+			color: #7a98d6;
+		}
+
+		&:hover {
+			color: $color-secondary;
+		}
+
+		&:active {
+			color: $color-secondary;
+		}
+	}
+
+	&--hidden {
+		display: none;
+	}
+
+	&--visible {
+		display: block;
+	}
 }
