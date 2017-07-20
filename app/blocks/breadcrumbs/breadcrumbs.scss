@@ -1,5 +1,6 @@
 .breadcrumbs {
 	display: flex;
+	margin-bottom: 6rem;
 
 	@media #{$desktop} {
 		display: none;

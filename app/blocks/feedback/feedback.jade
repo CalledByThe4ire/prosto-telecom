@@ -1,5 +1,5 @@
 mixin feedback()
 	+b.feedback&attributes(attributes)
-		+e('a').link(href='#', data-js='feedback-trigger')
-			+e('img').image(src='assets/images/icon-feedback.png', srcset= 'assets/images/icon-feedback@2x.png 2x', width='34', height='34', alt='Feedback')
+		+e('a').trigger(href='#', data-js='feedback-trigger')
+			| Feedback
 		+e('section').pop-up(data-js='feedback-popup')

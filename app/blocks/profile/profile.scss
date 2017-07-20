@@ -1,3 +1,21 @@
 .profile {
-	display: block;
+	display: flex;
+
+	&__trigger {
+		display: block;
+
+		@include retina-sprite($icon_login__mobile_group);
+
+		text-indent: -9999999px;
+
+		transition: none;
+
+		@media #{$desktop} {
+			@include retina-sprite($icon_login__desktop_group);
+		}
+
+		&:hover {
+			@include retina-sprite($icon_login_active_group);
+		}
+	}
 }

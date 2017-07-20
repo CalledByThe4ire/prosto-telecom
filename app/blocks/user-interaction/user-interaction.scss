@@ -1,3 +1,18 @@
 .user-interaction {
-	display: block;
+	display: flex;
+	margin-bottom: 2rem;
+
+	&__list {
+		display: flex;
+
+		@include list-clear();
+	}
+
+	&__item {
+		margin-right: 1rem;
+
+		&:last-child {
+			margin-right: 0;
+		}
+	}
 }
