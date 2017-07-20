@@ -18,6 +18,18 @@
 		justify-content: space-between;
 	}
 
+	&__link {
+		display: block;
+
+		@include retina-sprite($logo_group);
+
+		text-indent: -9999999px;
+
+		&--hidden {
+			display: none;
+		}
+	}
+
 	&__icon {
 		position: relative;
 
@@ -48,12 +60,6 @@
 
 		&::after {
 			top: -7px;
-		}
-	}
-
-	&__link {
-		&--hidden {
-			display: none;
 		}
 	}
 
