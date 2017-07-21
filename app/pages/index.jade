@@ -1,6 +1,5 @@
 extends ../blocks/layout-default/layout-default
 
-include ../blocks/container/container
 include ../blocks/page-header/page-header
 include ../blocks/cities/cities
 include ../blocks/offers/offers
@@ -10,7 +9,6 @@ block head
 	- var pageTitle = 'Prosto Telecom';
 
 block content
-	+container
-		+page-header
-			+offers
+	+page-header
+		+offers
 

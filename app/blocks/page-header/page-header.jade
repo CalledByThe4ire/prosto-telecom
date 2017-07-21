@@ -1,8 +1,9 @@
 mixin page-header()
-	+b('header').page-header--colorized&attributes(attributes)
-		+e.logo
-			+e('a').link--hidden(href='index.html')
-				| Prosto Telecom
-				+e('a').toggle--close(data-js='offers-toggle', href='javascript:void(0)', onclick='return false')
-					+e.icon
-		block
+	+b('header').page-header&attributes(attributes)
+		+e('div').container-fluid
+			+e('div').container
+				+e.logo
+					+e('a').link(href='index.html')
+						| Prosto Telecom
+						+e('a').toggle(data-js='offers-toggle', href='javascript:void(0)', onclick='return false')
+							+e.icon
