@@ -17,6 +17,7 @@
 		min-height: 100vh;
 
 		@include container();
+		outline: 1px dashed green;
 	}
 
 	&__logo {

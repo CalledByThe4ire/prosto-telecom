@@ -33,7 +33,7 @@
 // Set fixed ontainer
 @mixin container() {
 	min-width: $container--min;
-	max-width: $container--mid;
+	max-width: $container--max;
 	margin: 0 auto;
 }
 
