@@ -1,14 +1,16 @@
 .page-header {
 	position: relative;
 
-	@include padding-x(24px);
-
 	background-color: transparent;
 
 	&__container-fluid {
 		display: block;
 
 		@include container-fluid();
+
+		background: linear-gradient(#ffffff 80px, $color-primary 43px);
+		background-size: 100% 123px;
+		background-repeat: no-repeat;
 	}
 
 	&__container {
@@ -16,8 +18,17 @@
 		flex-direction: column;
 		min-height: 100vh;
 
+		@include padding-x(24px);
+
 		@include container();
 		outline: 1px dashed green;
+
+
+
+		@media #{$desktop} {
+			flex-direction: row;
+			min-height: initial;
+		}
 	}
 
 	&__logo {
