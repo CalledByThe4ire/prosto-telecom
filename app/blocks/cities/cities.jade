@@ -1,4 +1,6 @@
 mixin cities(list)
-	+b('select').cities(data-js='cities')&attributes(attributes)
-		each item in list
-			+e('option').item(value=item.tel, selected=item.selected) !{item.city}
+	+b('div').cities
+		+e('div').wrapper(data-js='cities-wrapper', data-value='')
+			+e('select').select(data-js='cities')&attributes(attributes)
+				each item in list
+					+e('option').item(data-js='cities-item', data-value=item.tel, value=item.tel, selected=item.selected) !{item.city}

@@ -1,3 +1,71 @@
 .cities {
-	display: block;
+	&__wrapper {
+		position: relative;
+
+		padding-right: 1rem;
+		padding-bottom: 2.5rem;
+
+		@media #{$desktop} {
+			padding-right: 1.2rem;
+		}
+
+		&::before {
+			content: "";
+
+			position: absolute;
+			top: 14%;
+			right: 0;
+
+			display: flex;
+			width: 8px;
+			height: 8px;
+
+			border-width: 2px;
+			border-style: solid;
+			border-top-color: transparent;
+			border-right-color: transparent;
+			border-left-color: #ffffff;
+			border-bottom-color: #ffffff;
+
+			transform: rotate(-135deg);
+
+			@media #{$desktop} {
+				top: 0;
+				transform: rotate(315deg);
+			}
+		}
+
+		&::after {
+			content: attr(data-value);
+
+			position: absolute;
+			bottom: 0;
+			left: 0;
+
+			display: flex;
+			width: 100%;
+
+			font-size: $font-size * 0.875;
+			line-height: 1.2;
+			font-weight: 300;
+			color: #ffffff;
+		}
+	}
+
+	&__select {
+		font-size: $font-size * 0.875;
+		line-height: 1.2;
+		font-weight: 900;
+		color: #ffffff;
+		text-transform: uppercase;
+		letter-spacing: 0.2px;
+
+		appearance: none;
+		background-color: transparent;
+		border: none;
+
+		&::-ms-expand {
+			display: none;
+		}
+	}
 }
