@@ -8,26 +8,32 @@
 
 		@include container-fluid();
 
-		background: linear-gradient(#ffffff 80px, $color-primary 43px);
+		background-image: linear-gradient(#ffffff 80px, $color-primary 43px);
 		background-size: 100% 123px;
 		background-repeat: no-repeat;
+
+		&--colorized {
+			background-image: none;
+			background-color: $color-primary;
+		}
 	}
 
 	&__container {
+		position: relative;
+
 		display: flex;
 		flex-direction: column;
+		flex-wrap: wrap;
 		min-height: 100vh;
 
-		@include padding-x(24px);
-
+		@include padding-x($offset--mobile);
 		@include container();
-		outline: 1px dashed green;
-
-
 
 		@media #{$desktop} {
 			flex-direction: row;
 			min-height: initial;
+
+			@include padding-x($offset--desktop);
 		}
 	}
 
@@ -36,8 +42,8 @@
 
 		display: flex;
 		align-items: center;
-		height: 72px;
-		justify-content: space-between;
+		flex-basis: 23%;
+		height: 80px;
 	}
 
 	&__link {
@@ -46,6 +52,10 @@
 		@include retina-sprite($logo_group);
 
 		text-indent: -9999999px;
+
+		&--visible {
+			display: block;
+		}
 
 		&--hidden {
 			display: none;
@@ -61,6 +71,7 @@
 		background-color: $color-primary;
 
 		transition-duration: 0.3s;
+
 		pointer-events: none;
 
 		&::before,

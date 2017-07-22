@@ -1,5 +1,14 @@
 .offers {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
 	min-height: 100vh;
+
+	@media #{$desktop} {
+		flex-direction: row;
+		flex-basis: 77%;
+		min-height: initial;
+	}
 
 	&--visible {
 		display: block;
@@ -15,6 +24,27 @@
 		&--toggle {
 			position: absolute;
 			top: 0;
+
+			@media #{$desktop} {
+				position: static;
+				top: auto;
+
+				justify-content: center;
+				align-items: center;
+				flex-grow: 1;
+
+				transform: translateX(-6rem);
+			}
+		}
+
+		&--cities {
+			@media #{$desktop} {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				order: -5;
+				height: 80px;
+			}
 		}
 	}
 }

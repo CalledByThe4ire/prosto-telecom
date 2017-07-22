@@ -6,7 +6,7 @@
 		padding-bottom: 2.5rem;
 
 		@media #{$desktop} {
-			padding-right: 1.2rem;
+			padding-right: 1.4rem;
 		}
 
 		&::before {
@@ -31,6 +31,10 @@
 
 			@media #{$desktop} {
 				top: 0;
+
+				border-left-color: #000000;
+				border-bottom-color: #000000;
+
 				transform: rotate(315deg);
 			}
 		}
@@ -49,11 +53,15 @@
 			line-height: 1.2;
 			font-weight: 300;
 			color: #ffffff;
+
+			@media #{$desktop} {
+				color: #000000;
+			}
 		}
 	}
 
 	&__select {
-		font-size: $font-size * 0.875;
+		font-size: $font-size * 0.875; // 1.4rem
 		line-height: 1.2;
 		font-weight: 900;
 		color: #ffffff;
@@ -66,6 +74,10 @@
 
 		&::-ms-expand {
 			display: none;
+		}
+
+		@media #{$desktop} {
+			color: #000000;
 		}
 	}
 }

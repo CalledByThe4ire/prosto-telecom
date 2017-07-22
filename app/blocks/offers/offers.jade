@@ -3,7 +3,7 @@ include ../nav/nav
 include ../list/list
 
 mixin offers()
-	+b.offers--hidden(data-js='offers')&attributes(attributes)
+	+b.offers(data-js='offers')&attributes(attributes)
 		+e.fieldset--toggle(role='group')
 			+input-toggle(getData('offers-toggle'))
 		+nav

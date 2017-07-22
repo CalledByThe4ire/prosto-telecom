@@ -2,6 +2,16 @@
 	$root: &;
 	display: flex;
 
+	&:last-child {
+		#{$root}__caption {
+			padding-right: 0;
+
+			&::after {
+				width: 100%;
+			}
+		}
+	}
+
 	&__input {
 		display: none;
 	}
@@ -23,6 +33,15 @@
 
 		transition-duration: 0.3s;
 
+		@media #{$desktop} {
+			padding-top: 0;
+
+			font-size: $font-size * 1.25; // 2rem
+			line-height: 1.3;
+			color: #d2d2d2;
+			opacity: 1;
+		}
+
 		&::after {
 			content: "";
 			position: absolute;
@@ -35,11 +54,18 @@
 		}
 	}
 
-	#{$root}__input:checked + #{$root}__caption {
+	&__input:checked + #{$root}__caption {
 		opacity: 1;
+
+		@media #{$desktop} {
+			opacity: initial;
+			color: $color-primary;
+		}
 	}
 
-	#{$root}__input:checked + #{$root}__caption::after {
+	&__input:checked + #{$root}__caption::after {
 		display: block;
 	}
 }
+
+
