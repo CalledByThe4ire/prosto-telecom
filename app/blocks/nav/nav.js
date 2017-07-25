@@ -1,13 +1,9 @@
 import utils from '../../scripts/utils';
 
 export default window.addEventListener(`DOMContentLoaded`, () => {
-  // media queries
-  const mqlMobile = window.matchMedia(`only screen and (max-width: 1071px)`);
-  const mqlDesktop = window.matchMedia(`only screen and (min-width: 1072px)`);
 
   // DOM elements
   const listToggle = utils.$$(`[data-js='list-item']`);
-
 
   // modifiers
   const visibleMod = `visible`;
@@ -30,33 +26,10 @@ export default window.addEventListener(`DOMContentLoaded`, () => {
     }
   };
 
-  /**
-* Toggle 'offers' block conditionally for different breakpoints
-*/
-  // const matchMedia = () => {
-  //   if (mqlDesktop.matches) {
-  //     if (!offers.classList.contains(`offers--` + visibleMod)) {
-  //       offers.classList.add(`offers--` + visibleMod);
-  //     }
-  //   }
-
-  //   if (mqlMobile.matches) {
-  //     if (offers.classList.contains(`offers--` + visibleMod)) {
-  //       pageHeaderDesign(`mobile`);
-  //     }
-  //   }
-  // };
-
   listToggle.forEach(item => {
     item.addEventListener(`click`, evt => {
       toggleList(evt);
     });
   });
-
-  // matchMedia();
-
-  // window.addEventListener(`resize`, () => {
-  //   matchMedia();
-  // });
 
 });
