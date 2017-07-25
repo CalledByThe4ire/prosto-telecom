@@ -1,6 +1,6 @@
 .list {
 	$root: &;
-	display: block;
+	display: none;
 
 	@include list-clear();
 	font-size: $font-size * 0.875; // 1.4rem
@@ -112,19 +112,19 @@
 		}
 
 		&--collapsed {
+			margin-top: -1px;
+
 			border-top-width: 1px;
 			border-top-style: solid;
-			border-top-color: rgba(#f5f5f5, 0.2);
+			border-top-color: #7a98d6;
+			border-bottom-width: 1px;
+			border-bottom-style: solid;
+			border-bottom-color: #7a98d6;
+
 			opacity: 1;
 
 			@media #{$desktop} {
 				border: none;
-			}
-
-			&:last-child {
-				border-bottom-width: 1px;
-				border-bottom-style: solid;
-				border-bottom-color: rgba(#f5f5f5, 0.2);
 			}
 
 			&::after {
@@ -161,9 +161,5 @@
 
 	&--visible {
 		display: block;
-	}
-
-	&--hidden {
-		display: none;
 	}
 }
