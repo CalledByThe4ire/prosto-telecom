@@ -1,5 +1,5 @@
 mixin input-toggle(data)
 	each item in data
 		+b('label')(class=item.inputType)&attributes(attributes)
-			+e('input').input(data-js=item.name, type=item.inputType, name=item.name, checked=item.isChecked, disabled=item.isDisabled)
+			+e('input').input(data-mod=item.mod, data-js=item.name, type=item.inputType, name=item.name, checked=item.isChecked, disabled=item.isDisabled)
 			+e.caption !{item.label}

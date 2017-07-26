@@ -1,6 +1,7 @@
 [
   {
     "inputType": "radio",
+    "mod": "home",
     "name": "offers-toggle",
     "isChecked": true,
     "isDisabled": false,
@@ -8,6 +9,7 @@
   },
   {
     "inputType": "radio",
+    "mod": "business",
     "name": "offers-toggle",
     "isChecked": false,
     "isDisabled": false,
