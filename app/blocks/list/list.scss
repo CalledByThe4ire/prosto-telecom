@@ -124,6 +124,8 @@
 			opacity: 1;
 
 			@media #{$desktop} {
+				margin-top: 0;
+
 				border: none;
 			}
 

@@ -2,7 +2,7 @@
   {
     "inputType": "radio",
     "mod": "home",
-    "name": "offers-toggle",
+    "name": "nav-toggle",
     "isChecked": true,
     "isDisabled": false,
     "label": "Для дома"
@@ -10,7 +10,7 @@
   {
     "inputType": "radio",
     "mod": "business",
-    "name": "offers-toggle",
+    "name": "nav-toggle",
     "isChecked": false,
     "isDisabled": false,
     "label": "Для бизнеса"
