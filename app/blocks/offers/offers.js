@@ -9,7 +9,7 @@ export default window.addEventListener(`DOMContentLoaded`, () => {
  * Conditionally toggle appropriate nav list
  * @param {MouseEvent} evt
  */
-  const toggleNav = evt => {
+  const clickEventHandler = evt => {
     navListCollection.forEach(nav => {
       if (nav.classList.contains(`nav__list--visible`)) {
         nav.classList.remove(`nav__list--visible`);
@@ -22,7 +22,7 @@ export default window.addEventListener(`DOMContentLoaded`, () => {
 
   navToggleCollection.forEach(item => {
     item.addEventListener(`click`, evt => {
-      toggleNav(evt);
+      clickEventHandler(evt);
     });
   });
 });

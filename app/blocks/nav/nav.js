@@ -14,7 +14,7 @@ export default window.addEventListener(`DOMContentLoaded`, () => {
    * Toggle 'offers' block for mobile
    * @param {MouseEvent} evt
    */
-  const toggleList = evt => {
+  const clickEventHandler = evt => {
     if (evt.target.parentElement.classList.contains(`list__item--` + collapsedMod)) {
       evt.target.parentElement.classList.remove(`list__item--` + collapsedMod);
       evt.target.parentElement.classList.add(`list__item--` + expandedMod);
@@ -28,7 +28,7 @@ export default window.addEventListener(`DOMContentLoaded`, () => {
 
   listToggle.forEach(item => {
     item.addEventListener(`click`, evt => {
-      toggleList(evt);
+      clickEventHandler(evt);
     });
   });
 

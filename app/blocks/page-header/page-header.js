@@ -43,7 +43,7 @@ export default window.addEventListener(`DOMContentLoaded`, () => {
 	 * Toggle 'offers' block for mobile
 	 * @param {MouseEvent} evt
 	 */
-  const toggleOffers = evt => {
+  const clickEventHandler = evt => {
     evt.target.classList.toggle(`page-header__toggle--` + closeMod);
     offers.classList.toggle(`offers--` + visibleMod);
 
@@ -72,7 +72,7 @@ export default window.addEventListener(`DOMContentLoaded`, () => {
   };
 
   toggle.addEventListener(`click`, evt => {
-    toggleOffers(evt);
+    clickEventHandler(evt);
   });
 
   matchMedia();
