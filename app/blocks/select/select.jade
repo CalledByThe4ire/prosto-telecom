@@ -1,0 +1,5 @@
+mixin select(list)
+	+b('select').select&attributes(attributes)
+		each item in list
+			+e('option').item(data-value=item.tel, value=item.tel, selected=item.selected)
+				| !{item.city}

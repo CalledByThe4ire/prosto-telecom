@@ -1,0 +1,13 @@
+.select {
+	display: flex;
+
+	&--cities {
+		appearance: none;
+		background-color: transparent;
+		border: none;
+
+		&::-ms-expand {
+			display: none;
+		}
+	}
+}

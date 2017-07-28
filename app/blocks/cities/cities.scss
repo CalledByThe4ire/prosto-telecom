@@ -68,14 +68,6 @@
 		text-transform: uppercase;
 		letter-spacing: 0.2px;
 
-		appearance: none;
-		background-color: transparent;
-		border: none;
-
-		&::-ms-expand {
-			display: none;
-		}
-
 		@media #{$desktop} {
 			color: #000000;
 		}

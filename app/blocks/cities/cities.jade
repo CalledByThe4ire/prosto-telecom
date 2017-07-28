@@ -1,6 +1,6 @@
-mixin cities(list)
-	+b('div').cities
+include ../select/select
+
+mixin cities()
+	+b('div').cities(data-js='cities')
 		+e('div').wrapper(data-js='cities-wrapper', data-value='+7 (812) 366 40 40')
-			+e('select').select(data-js='cities-select')&attributes(attributes)
-				each item in list
-					+e('option').item(data-js='cities-item', data-value=item.tel, value=item.tel, selected=item.selected) !{item.city}
+			+select(getData('cities'))(class='--cities __select')
