@@ -5,7 +5,7 @@ include ../list/list
 mixin offers()
 	+b.offers--visible(data-js='offers')&attributes(attributes)
 		+e.fieldset--toggle(role='group')
-			+input-toggle(getData('nav-toggle'))
+			+input-toggle(getData('nav-toggle'))(class='--nav-toggle')
 		+nav
 			+list(getData('business-offers'))(data-mod='business', class='--business __list --visible')
 			+list(getData('home-offers'))(data-mod='home', class='--home __list')

@@ -1,70 +1,67 @@
 .radio {
 	$root: &;
-	display: flex;
 
-	&:last-child {
-		#{$root}__caption {
-			padding-right: 0;
+	&--nav-toggle {
+		display: flex;
 
-			&::after {
-				width: 100%;
+		&:last-child {
+			#{$root}__caption {
+				padding-right: 0;
+
+				&::after {
+					width: 100%;
+				}
 			}
 		}
-	}
 
-	&__input {
-		display: none;
-	}
-
-	&__caption {
-		position: relative;
-
-		padding-top: 2rem;
-		padding-right: 2rem;
-		padding-bottom: 1rem;
-
-		font-size: $font-size;
-		line-height: 1;
-		font-family: $font-family;
-		font-weight: 500;
-		color: #ffffff;
-
-		opacity: 0.2;
-
-		transition-duration: 0.3s;
-
-		@media #{$desktop} {
-			padding-top: 0;
-
-			font-size: $font-size * 1.25; // 2rem
-			line-height: 1.3;
-			color: #d2d2d2;
-			opacity: 1;
-		}
-
-		&::after {
-			content: "";
-			position: absolute;
-			bottom: 0;
-
+		& #{$root}__input {
 			display: none;
-			width: calc(100% - 2rem);
-			height: 4px;
-			background-color: $color-secondary;
 		}
-	}
 
-	&__input:checked + #{$root}__caption {
-		opacity: 1;
+		& #{$root}__caption {
+			position: relative;
+			padding-top: 2rem;
+			padding-right: 2rem;
+			padding-bottom: 1rem;
+			font-size: $font-size;
+			line-height: 1;
+			font-family: $font-family;
+			font-weight: 500;
+			color: #ffffff;
+			opacity: 0.2;
+			transition-duration: 0.3s;
 
-		@media #{$desktop} {
-			opacity: initial;
-			color: $color-primary;
+			@media #{$desktop} {
+				padding-top: 0;
+				font-size: $font-size * 1.25; // 2rem
+				line-height: 1.3;
+				color: #d2d2d2;
+				opacity: 1;
+			}
+
+			&::after {
+				content: "";
+				position: absolute;
+				bottom: 0;
+				display: none;
+				width: calc(100% - 2rem);
+				height: 4px;
+				background-color: $color-secondary;
+			}
 		}
-	}
 
-	&__input:checked + #{$root}__caption::after {
-		display: block;
+		& #{$root}__input:checked + #{$root}__caption {
+			opacity: 1;
+
+			@media #{$desktop} {
+				opacity: initial;
+				color: $color-primary;
+			}
+		}
+
+		& #{$root}__input:checked + #{$root}__caption::after {
+			display: block;
+		}
 	}
 }
 
