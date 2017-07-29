@@ -15,14 +15,18 @@ export default window.addEventListener(`DOMContentLoaded`, () => {
    * @param {MouseEvent} evt
    */
   const clickEventHandler = evt => {
-    if (evt.target.parentElement.classList.contains(`list__item--` + collapsedMod)) {
-      evt.target.parentElement.classList.remove(`list__item--` + collapsedMod);
-      evt.target.parentElement.classList.add(`list__item--` + expandedMod);
-      evt.target.parentElement.lastElementChild.classList.add(`list--` + visibleMod);
-    } else {
-      evt.target.parentElement.classList.add(`list__item--` + collapsedMod);
-      evt.target.parentElement.classList.remove(`list__item--` + expandedMod);
-      evt.target.parentElement.lastElementChild.classList.remove(`list--` + visibleMod);
+    const el = evt.target.parentElement;
+
+    if (el.classList.contains(`list__item--top-level`)) {
+      if (el.classList.contains(`list__item--` + collapsedMod)) {
+        el.classList.remove(`list__item--` + collapsedMod);
+        el.classList.add(`list__item--` + expandedMod);
+        el.lastElementChild.classList.add(`list--` + visibleMod);
+      } else {
+        el.classList.add(`list__item--` + collapsedMod);
+        el.classList.remove(`list__item--` + expandedMod);
+        el.lastElementChild.classList.remove(`list--` + visibleMod);
+      }
     }
   };
 

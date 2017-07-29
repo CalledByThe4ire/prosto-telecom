@@ -6,7 +6,6 @@ export default window.addEventListener(`DOMContentLoaded`, () => {
   const citiesSelect = document.querySelector(`[data-js='cities'] select`);
   const citiesOptionCollection = utils.$$(`[data-js='cities'] option`);
 
-  console.log(citiesOptionCollection);
   /**
  * Get selected option' data and display it in parent container
  */
