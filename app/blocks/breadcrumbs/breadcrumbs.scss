@@ -20,20 +20,24 @@
 	}
 
 	&__item {
-		flex-basis: 33.333333333333333%;
+		text-align: center;
 		padding-left: 1rem;
 		padding-right: 1rem;
 
-		&:nth-child(3n+1) {
+		border-right-width: 1px;
+		border-right-style: solid;
+		border-right-color: #7a98d6;
+
+		opacity: 0.8;
+
+		&:first-child {
 			padding-left: 0;
 		}
 
-		&:not(:nth-child(3n)):not(:last-child) {
-			border-right-width: 1px;
-			border-right-style: solid;
-			border-right-color: #7a98d6;
+		&:last-child {
+			padding-right: 0;
 
-			opacity: 0.8;
+			border: none;
 		}
 	}
 
