@@ -57,6 +57,10 @@
 
 		text-indent: -9999999px;
 
+		@media #{$desktop} {
+			display: block;
+		}
+
 		&--visible {
 			display: block;
 		}
