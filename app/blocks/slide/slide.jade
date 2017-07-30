@@ -1,0 +1,6 @@
+mixin slide(arr, i)
+	+b('li')(class='slide--#{i + 1} js_slide')&attributes(attributes)
+		+e.container-fluid
+			+e.container
+				+e('header').heading !{arr.heading}
+				+e('span').slogan !{arr.slogan}

@@ -1,0 +1,14 @@
+include ../slide/slide
+
+mixin slider(list)
+	+b.slider(class='js_slider')&attributes(attributes)
+		+e('div').frame(class='js_frame')
+			+e('ul').list(class='js_slides')
+				each item, index in list
+					+slide(item, index)(class='__slide')
+
+		+e('span').prev(class='js_prev')
+			| previous slide
+		+e('span').next(class='js_next')
+			| next slide
+		+e('ul').dots(class='js_slider-dots')
