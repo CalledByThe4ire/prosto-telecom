@@ -27,6 +27,15 @@ const utils = {
     context = context || document;
     const elements = context.querySelectorAll(selector);
     return Array.prototype.slice.call(elements);
+  },
+  /**
+   * Add one or more listeners to an element
+   * @param  {HTMLElement} element - DOM element to add listeners to
+   * @param  {String} eventNames - space separated list of event names, e.g. 'click change'
+   * @param  {Function} listener - function to attach for each event as a listener
+   */
+  addListenerMulti(element, eventNames, listener) {
+    eventNames.split(` `).forEach(e => element.addEventListener(e, listener, false));
   }
 };
 
