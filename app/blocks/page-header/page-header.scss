@@ -19,6 +19,11 @@
 		&--colorized {
 			background-color: $color-primary;
 		}
+
+		&--abs-positioning {
+			position: absolute;
+			z-index: 5;
+		}
 	}
 
 	&__container {
@@ -27,7 +32,6 @@
 		display: flex;
 		flex-direction: column;
 		flex-wrap: wrap;
-		// min-height: 100vh;
 
 		@include padding-x($offset--mobile);
 		@include container();

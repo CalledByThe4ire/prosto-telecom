@@ -1,6 +1,6 @@
 mixin page-header()
 	+b('header').page-header--colorized(data-js='page-header')&attributes(attributes)
-		+e('div').container-fluid--colorized(data-js='container-fluid')
+		+e('div').container-fluid--colorized.--abs-positioning(data-js='container-fluid')
 			+e('div').container
 				+e.logo
 					+e('a').link(data-js='logo-link', href='index.html')
