@@ -1,5 +1,3 @@
-// import utils from '../../scripts/utils';
-
 export default window.addEventListener(`DOMContentLoaded`, () => {
   // media queries
   const mqlMobile = window.matchMedia(`only screen and (max-width: 1071px)`);
