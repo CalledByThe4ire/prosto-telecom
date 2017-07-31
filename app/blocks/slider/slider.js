@@ -1,3 +1,4 @@
+import utils from '../../scripts/utils';
 import { lory } from 'lory.js';
 
 export default window.addEventListener(`DOMContentLoaded`, () => {
@@ -35,10 +36,7 @@ export default window.addEventListener(`DOMContentLoaded`, () => {
     }
   };
 
-  slider.addEventListener(`before.lory.init`, handleDotEvent);
-  slider.addEventListener(`after.lory.init`, handleDotEvent);
-  slider.addEventListener(`after.lory.slide`, handleDotEvent);
-  slider.addEventListener(`on.lory.resize`, handleDotEvent);
+  utils.addListenerMulti(slider, `before.lory.init after.lory.init after.lory.slide on.lory.resize`, handleDotEvent);
 
   const dotNavigationSlider = lory(slider, {
     infinite: 1,
