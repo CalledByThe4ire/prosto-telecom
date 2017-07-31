@@ -43,11 +43,11 @@ $container--max:           107.2rem !default;
 
 // == Paddings and margins
 //
-$offset--mobile:                   2.4rem !default;
-$offset--desktop:                  3rem !default;
+$offset--mobile:           2.4rem !default;
+$offset--desktop:          3rem !default;
 
 // == Lost
 // https://github.com/peterramsing/lost
 /* stylelint-disable */
-@lost flexbox              flex
+@lost flexbox              flex;
 /* stylelint-enable */
