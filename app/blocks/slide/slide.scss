@@ -71,7 +71,9 @@
 
 	&__heading,
 	&__slogan {
-		text-shadow: 0 0 2rem #000000;
+		@media #{$desktop} {
+			text-shadow: 0 0 2rem #000000;
+		}
 	}
 
 	&__heading {
