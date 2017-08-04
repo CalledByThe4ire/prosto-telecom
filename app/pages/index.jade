@@ -10,6 +10,7 @@ include ../blocks/breadcrumbs/breadcrumbs
 //- main-content
 include ../blocks/main-content/main-content
 include ../blocks/slider/slider
+include ../blocks/plans/plans
 
 block head
 	- var pageTitle = 'Prosto Telecom';
@@ -19,4 +20,5 @@ block content
 		+offers
 	+main-content
 		+slider(getData('slides-list'))
+		+plans(getData('plans-list'))
 

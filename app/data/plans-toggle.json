@@ -1,0 +1,34 @@
+[
+{
+  "inputType": "radio",
+  "modifier": "retail",
+  "name": "plans-toggle",
+  "isChecked": false,
+  "isDisabled": false,
+  "label": "Ритейл"
+},
+{
+  "inputType": "radio",
+  "modifier": "wi-fi",
+  "name": "plans-toggle",
+  "isChecked": true,
+  "isDisabled": false,
+  "label": "Организация Wi-FI зон"
+},
+{
+  "inputType": "radio",
+  "modifier": "call-centers",
+  "name": "plans-toggle",
+  "isChecked": false,
+  "isDisabled": false,
+  "label": "Call-центры"
+},
+{
+  "inputType": "radio",
+  "modifier": "logistics",
+  "name": "plans-toggle",
+  "isChecked": false,
+  "isDisabled": false,
+  "label": "Логистика"
+}
+]

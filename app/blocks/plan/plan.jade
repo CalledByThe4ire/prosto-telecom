@@ -1,0 +1,4 @@
+mixin plan(item)
+	+b('li').plan(data-modifier=item.modifier)&attributes(attributes)
+		+e('header').heading !{item.heading}
+		+e('p').description !{item.description}

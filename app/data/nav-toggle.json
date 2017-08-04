@@ -1,7 +1,7 @@
 [
   {
     "inputType": "radio",
-    "mod": "home",
+    "modifier": "home",
     "name": "nav-toggle",
     "isChecked": true,
     "isDisabled": false,
@@ -9,7 +9,7 @@
   },
   {
     "inputType": "radio",
-    "mod": "business",
+    "modifier": "business",
     "name": "nav-toggle",
     "isChecked": false,
     "isDisabled": false,
