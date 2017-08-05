@@ -13,7 +13,7 @@
   "name": "plans-toggle",
   "isChecked": true,
   "isDisabled": false,
-  "label": "Организация Wi-FI зон"
+  "label": "Организация Wi&#8209;Fi&nbsp;зон"
 },
 {
   "inputType": "radio",
@@ -21,7 +21,7 @@
   "name": "plans-toggle",
   "isChecked": false,
   "isDisabled": false,
-  "label": "Call-центры"
+  "label": "Call-&shy;центры"
 },
 {
   "inputType": "radio",

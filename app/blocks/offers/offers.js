@@ -14,7 +14,7 @@ export default window.addEventListener(`DOMContentLoaded`, () => {
       if (nav.classList.contains(`nav__list--visible`)) {
         nav.classList.remove(`nav__list--visible`);
       }
-      if (evt.target.checked && evt.target.dataset.mod === nav.dataset.mod) {
+      if (evt.target.checked && evt.target.dataset.modifier === nav.dataset.modifier) {
         nav.classList.add(`nav__list--visible`);
       }
     });

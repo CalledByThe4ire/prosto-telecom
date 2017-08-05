@@ -7,7 +7,7 @@ mixin plans(list)
 			+e('div').container
 				+e('div').fieldset--controls(role='group')&attributes(attributes)
 					+e('header').heading
-						| Выгодные предложения для различных направлений бизнеса:
+						| Выгодные предложения<br>для&nbsp;различных направлений бизнеса:
 					+input-toggle(getData('plans-toggle'))(class='--plans-toggle')
 				+e('ul').list
 					each item in list

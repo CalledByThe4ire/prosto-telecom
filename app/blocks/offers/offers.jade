@@ -7,8 +7,8 @@ mixin offers()
 		+e.fieldset--toggle(role='group')
 			+input-toggle(getData('nav-toggle'))(class='--nav-toggle')
 		+nav
-			+list(getData('business-offers'))(data-mod='business', class='--business __list --visible')
-			+list(getData('home-offers'))(data-mod='home', class='--home __list')
+			+list(getData('business-offers'))(data-modifier='business', class='--business __list --visible')
+			+list(getData('home-offers'))(data-modifier='home', class='--home __list')
 
 		+breadcrumbs
 		+user-interaction

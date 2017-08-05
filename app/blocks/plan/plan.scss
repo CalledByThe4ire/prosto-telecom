@@ -1,3 +1,134 @@
 .plan {
-	display: block;
+	&__link {
+		position: relative;
+		z-index: 5;
+
+		display: flex;
+		flex-direction: column;
+		min-height: 185px;
+
+		@media #{$desktop} {
+			min-height: auto;
+		}
+
+		&:link,
+		&:visited {
+			color: $color-primary;
+			transition-duration: 0.3s;
+		}
+
+		&:hover {
+			color: lighten($color-primary, 15%);
+		}
+
+		&:active {
+			color: lighten($color-primary, 15%);
+		}
+	}
+
+	&__heading {
+		z-index: 5;
+
+		margin-right: 25rem;
+
+		@include margin-y(auto);
+		margin-left: $offset--mobile;
+
+		@include padding-x(0);
+		@include padding-y(2px);
+
+		font-size: $font-size * 1.25; // 2rem
+		line-height: 1.4;
+		font-weight: 700;
+
+		border-left: 20px solid $color-secondary;
+
+		@media #{$desktop} {
+			@include padding-y(7px);
+			padding-right: 15rem;
+
+			@include margin-x(auto);
+			margin-bottom: 1rem;
+
+			font-size: $font-size * 2.125; // 3.4rem
+			line-height: 1;
+		}
+
+		& header {
+			display: inline;
+			margin: 0;
+			padding: 4px 0;
+
+			background-color: $color-secondary;
+
+			& span {
+				position: relative;
+				left: -10px;
+			}
+		}
+	}
+
+	&__description {
+		position: relative;
+		z-index: 5;
+
+		margin: 0;
+		padding: 0;
+
+		@include padding-x($offset--mobile);
+		@include padding-y(2rem);
+
+		font-size: $font-size * 0.875; // 1.4rem
+		line-height: 1.2;
+		color: #353535;
+		font-weight: 300;
+
+		@media #{$desktop} {
+			margin-bottom: 2rem;
+			padding: 0;
+			padding-right: 15rem;
+
+			font-size: $font-size;
+		}
+	}
+
+	&__btn {
+		@include btn(3rem);
+
+		&--make-request {
+			align-self: center;
+			margin-bottom: 3.5rem;
+
+			font-size: $font-size * 0.8125; // 1.3rem
+			line-height: 1.2;
+
+			background-color: $color-primary;
+			border: 3px solid transparent;
+
+			@media #{$desktop} {
+				font-size: $font-size * 1.125; // 1.8rem
+				color: $color-primary;
+
+				border: 3px solid $color-primary;
+				background-color: transparent;
+			}
+
+			&:hover {
+				color: lighten($color-primary, 15%);
+				background-color: $color-secondary;
+
+				@media #{$desktop} {
+					color: lighten($color-primary, 15%);
+					border: 3px solid lighten($color-primary, 15%);
+				}
+			}
+
+			&:active {
+				color: lighten($color-primary, 15%);
+
+				background-color: $color-secondary;
+				box-shadow: 0 0 5px lighten($color-primary, 15%);
+			}
+		}
+	}
 }

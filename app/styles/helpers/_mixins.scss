@@ -54,16 +54,43 @@
 @mixin retinaBackground($image, $ext: "png") {
 	background-image: url("../images/" + $image + "." + $ext);
 
-	@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+	@media #{$retina2x} {
 		background-image: url("../images/" + $image + "@2x." + $ext);
 	}
 }
 
-// Ensures that the container will not collapse when all its children are floated
-@mixin clearfix() {
-	&::after {
-		display: table;
-		clear: both;
-		content: "";
+// Set button properties
+@mixin btn($padding-x: 4.5rem, $padding-y: 1.5rem) {
+	display: flex;
+	justify-content: center;
+
+	@include padding-x($padding-x);
+	@include padding-y($padding-y);
+
+	font-size: $font-size;
+	line-height: 1;
+	font-family: $font-family;
+	font-weight: 400;
+	white-space: nowrap;
+	color: #ffffff;
+	vertical-align: middle;
+
+	cursor: pointer;
+	user-select: none;
+
+	&:hover,
+	&--hover {
+		transition-duration: 0.3s;
+	}
+
+	&:active,
+	&--active {
+		outline: 0;
+	}
+
+	&:disabled,
+	&--disabled {
+		cursor: not-allowed;
+		pointer-events: none;
 	}
 }

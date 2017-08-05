@@ -4,4 +4,4 @@ mixin breadcrumbs()
 		+e('ul').list
 			each item, index in list
 				+e.item
-					+e('a').link(href='#') !{item}
+					+e('a').link(href='javascript:void(0)', onclick='return false') !{item}

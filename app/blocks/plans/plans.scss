@@ -1,3 +1,157 @@
 .plans {
-	display: block;
+	margin-bottom: 4rem;
+
+	@media #{$desktop} {
+		margin-bottom: 5rem;
+	}
+
+	&__container-fluid {
+		@include container-fluid();
+		background-color: #d8dbe6;
+	}
+
+	&__container {
+		@include container();
+
+		@media #{$desktop} {
+			@include padding-x($offset--desktop * 2);
+			padding-bottom: 6rem;
+		}
+	}
+
+	&__fieldset {
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		align-items: flex-end;
+
+		&--controls {
+			min-height: 240px;
+			padding-bottom: 2.5rem;
+
+			background-color: #eff2f9;
+
+			@media #{$desktop} {
+				padding-top: 5rem;
+
+				@include margin-x(-6rem);
+				@include padding-x(6rem);
+				padding-bottom: 3rem;
+
+				transform: translateY(-50px);
+			}
+		}
+	}
+
+	&__heading {
+		flex-basis: 100%;
+
+		@include padding-x(15rem);
+		margin-top: auto;
+
+		font-size: $font-size;
+		line-height: 1;
+		font-weight: 700;
+		color: $color-primary;
+		text-align: center;
+
+		@media #{$desktop} {
+			@include padding-x(0);
+			padding-bottom: 1rem;
+
+			font-size: $font-size * 2.25; // 3.6rem
+			line-height: 1.1;
+		}
+	}
+
+	&__list {
+		@include list-clear();
+		@include padding-x(8.5rem);
+	}
+
+	&__item {
+		position: relative;
+		display: none;
+		flex-direction: column;
+		flex-wrap: wrap;
+
+		@include margin-x(-8.5rem);
+
+		@media #{$desktop} {
+			flex-direction: row;
+			justify-content: flex-start;
+			align-items: center;
+			min-height: 290px;
+			padding-left: 33.5rem;
+		}
+
+		&::before {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+
+			display: flex;
+			width: 100%;
+			min-height: 185px;
+			background-size: cover;
+			background-repeat: no-repeat;
+
+			@media #{$desktop} {
+				position: absolute;
+				top: 0;
+				right: auto;
+				bottom: auto;
+				left: 0;
+
+				width: 290px;
+				height: 290px;
+
+				border-radius: 50%;
+				border: 12px solid #eff2f9;
+			}
+		}
+
+		&[data-modifier="retail"] {
+			&::before {
+				@include retinaBackground(photo-retail__plans--desktop, jpg);
+				background-position-y: 100%;
+
+				@media #{$desktop} {
+					background-position-y: auto;
+				}
+			}
+		}
+
+		&[data-modifier="wi-fi"] {
+			&::before {
+				@include retinaBackground(photo-wi-fi__plans--desktop, jpg);
+
+				@media #{$desktop} {
+					background-position-x: 60%;
+				}
+			}
+		}
+
+		&[data-modifier="call-center"] {
+			&::before {
+				@include retinaBackground(photo-call-center__plans--desktop, jpg);
+			}
+		}
+
+		&[data-modifier="logistics"] {
+			&::before {
+				@include retinaBackground(photo-logistics__plans--desktop, jpg);
+				background-position-y: 70%;
+
+				@media #{$desktop} {
+					background-position-y: auto;
+				}
+			}
+		}
+
+		&--visible {
+			display: flex;
+		}
+	}
 }
