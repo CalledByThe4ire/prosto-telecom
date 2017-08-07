@@ -133,7 +133,7 @@
 			}
 		}
 
-		&[data-modifier="call-center"] {
+		&[data-modifier="call-centers"] {
 			&::before {
 				@include retinaBackground(photo-call-center__plans--desktop, jpg);
 			}

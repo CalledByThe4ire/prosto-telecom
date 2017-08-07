@@ -9,6 +9,6 @@ mixin plans(list)
 					+e('header').heading
 						| Выгодные предложения<br>для&nbsp;различных направлений бизнеса:
 					+input-toggle(getData('plans-toggle'))(class='--plans-toggle')
-				+e('ul').list
+				+e('ul').list(data-js='plans-list')
 					each item in list
-						+plan(item)(class='__item #{(item.isVisible) ? "--visible" : ""}')
+						+plan(item)(class='__item #{(item.isVisible) ? "--visible" : ""}', data-js='plans-item')

@@ -8,6 +8,7 @@ import '../blocks/cities/cities.js';
 
 // main-content
 import '../blocks/slider/slider.js';
+import '../blocks/plans/plans.js';
 
 document.addEventListener(`DOMContentLoaded`, () => {
   svg4everybody();
