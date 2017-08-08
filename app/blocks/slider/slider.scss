@@ -3,22 +3,21 @@
 	position: relative;
 
 	&__frame {
+		position: relative;
 		font-size: 0;
 		line-height: 0;
-		white-space: nowrap;
 
 		overflow: hidden;
 	}
 
 	&__list {
-		width: percentage(6);
-
 		@include list-clear();
+		display: inline-block;
 	}
 
 	&__slide {
+		position: relative;
 		display: inline-block;
-		width: percentage(1/6);
 	}
 
 	&__prev,
@@ -88,6 +87,35 @@
 					transition-duration: 0.3s;
 				}
 			}
+		}
+	}
+
+	&--promo {
+		& #{$root}__list {
+			width: percentage(6);
+		}
+
+		& #{$root}__slide {
+			width: percentage(1/6);
+		}
+	}
+
+	&--info {
+		& #{$root}__list {
+			display: inline-block;
+			width: percentage(5/1);
+		}
+
+		& #{$root}__slide {
+			font-size: $font-size;
+			line-height: 1;
+			display: inline-block;
+			width: percentage(1/5);
+		}
+
+		& #{$root}__prev,
+		& #{$root}__next {
+			display: block;
 		}
 	}
 }

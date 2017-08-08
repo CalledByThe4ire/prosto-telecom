@@ -1,0 +1,17 @@
+include ../input-toggle/input-toggle
+include ../slider/slider
+
+
+mixin info()
+	+b.info(data-js='info')&attributes(attributes)
+		+e.fieldset--toggle(role='group')
+			+input-toggle(getData('info-toggle'))(class='--info-toggle')
+		+e('div').content
+			+e('div').news--visible
+				+slider(getData('news-slides'))(data-js='info-slider', class='--info js_slider')
+				+e('button')(onclick='return false').btn--load-more
+					| Еще новости
+			+e('div').issues
+				+slider(getData('issues-slides'))(data-js='info-slider', class='--info js_slider')
+				+e('button')(onclick='return false').btn--load-more
+					| Еще публикации

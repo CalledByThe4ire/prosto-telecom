@@ -11,6 +11,7 @@ include ../blocks/breadcrumbs/breadcrumbs
 include ../blocks/main-content/main-content
 include ../blocks/slider/slider
 include ../blocks/plans/plans
+include ../blocks/info/info
 
 block head
 	- var pageTitle = 'Prosto Telecom';
@@ -19,6 +20,7 @@ block content
 	+page-header
 		+offers
 	+main-content
-		+slider(getData('slides-list'))
+		+slider(getData('promo-slides'))(data-js='promo-slider', class='--promo js_slider')
 		+plans(getData('plans-list'))
+		+info
 

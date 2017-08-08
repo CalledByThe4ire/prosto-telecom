@@ -1,7 +1,7 @@
 include ../slide/slide
 
 mixin slider(list)
-	+b.slider(class='js_slider')&attributes(attributes)
+	+b.slider&attributes(attributes)
 		+e('div').frame(class='js_frame')
 			+e('ul').list(class='js_slides')
 				each item, index in list

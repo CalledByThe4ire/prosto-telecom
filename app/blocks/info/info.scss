@@ -1,0 +1,19 @@
+.info {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	&__news,
+	&__issues {
+		position: relative;
+
+		display: none;
+		flex-direction: column;
+		flex-wrap: wrap;
+
+		&--visible {
+			display: flex;
+		}
+	}
+}

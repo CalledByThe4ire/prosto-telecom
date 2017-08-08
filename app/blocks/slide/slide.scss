@@ -2,119 +2,132 @@
 	$root: &;
 
 	&__container {
-		z-index: 10;
-
 		@include container();
 		display: flex;
-		flex-wrap: wrap;
-		justify-content: center;
-		width: 100%;
 	}
 
 	&__container-fluid {
-		position: relative;
-		z-index: 0;
-
 		@include container-fluid();
 		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		min-height: 55px;
+	}
 
-		@media #{$desktop} {
-			min-height: 590px;
+	&--promo {
+		& #{$root}__container {
+			z-index: 10;
+
+			flex-wrap: wrap;
+			justify-content: center;
+			width: 100%;
 		}
 
-		@include retinaBackground(slide__slider, jpg);
-		background-size: cover;
+		& #{$root}__container-fluid {
+			position: relative;
+			z-index: 0;
 
-		&::after {
-			content: "";
-			position: absolute;
-			top: 0;
-			right: 0;
-			bottom: 0;
-			left: 0;
-			z-index: 5;
-			display: block;
-			width: 100%;
-			height: 100%;
-			background-color: #000000;
-			opacity: 0.5;
+			flex-direction: column;
+			justify-content: center;
+			min-height: 55px;
 
 			@media #{$desktop} {
-				display: none;
+				min-height: 590px;
 			}
-		}
-	}
 
-	&--2 {
-		& #{$root}__container-fluid {
-			filter: grayscale(100%) sepia(100%) hue-rotate(0deg);
-		}
-	}
+			@include retinaBackground(slide__slider, jpg);
+			background-size: cover;
 
-	&--3 {
-		& #{$root}__container-fluid {
-			filter: grayscale(100%) sepia(100%) hue-rotate(90deg);
-		}
-	}
-
-	&--4 {
-		& #{$root}__container-fluid {
-			filter: grayscale(100%) sepia(100%) hue-rotate(180deg);
-		}
-	}
-
-	&__heading,
-	&__slogan {
-		@media #{$desktop} {
-			text-shadow: 0 0 2rem #000000;
-		}
-	}
-
-	&__heading {
-		position: relative;
-		font-size: $font-size * 1.125; // 1.8rem
-		line-height: 1.2;
-		font-weight: 700;
-		color: #ffffff;
-		text-align: center;
-
-		@media #{$desktop} {
-			margin-bottom: 1rem;
-			font-size: $font-size * 5.25; // 8.4rem
-		}
-
-		&::after {
-			content: "";
-			position: absolute;
-			left: 0;
-			bottom: 0;
-			display: none;
-			height: 1px;
-			width: 100%;
-			background-color: #ffffff;
-			opacity: 0.3;
-
-			@media #{$desktop} {
+			&::after {
+				content: "";
+				position: absolute;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				left: 0;
+				z-index: 5;
 				display: block;
+				width: 100%;
+				height: 100%;
+				background-color: #000000;
+				opacity: 0.5;
+
+				@media #{$desktop} {
+					display: none;
+				}
+			}
+		}
+
+		&#{$root}--2 {
+			& #{$root}__container-fluid {
+				filter: grayscale(100%) sepia(100%) hue-rotate(0deg);
+			}
+		}
+
+		&#{$root}--3 {
+			& #{$root}__container-fluid {
+				filter: grayscale(100%) sepia(100%) hue-rotate(90deg);
+			}
+		}
+
+		&#{$root}--4 {
+			& #{$root}__container-fluid {
+				filter: grayscale(100%) sepia(100%) hue-rotate(180deg);
+			}
+		}
+
+		& #{$root}__heading,
+		& #{$root}__slogan {
+			@media #{$desktop} {
+				text-shadow: 0 0 2rem #000000;
+			}
+		}
+
+		& #{$root}__heading {
+			position: relative;
+			font-size: $font-size * 1.125; // 1.8rem
+			line-height: 1.2;
+			font-weight: 700;
+			color: #ffffff;
+			text-align: center;
+
+			@media #{$desktop} {
+				margin-bottom: 1rem;
+				font-size: $font-size * 5.25; // 8.4rem
+			}
+
+			&::after {
+				content: "";
+				position: absolute;
+				left: 0;
+				bottom: 0;
+				display: none;
+				height: 1px;
+				width: 100%;
+				background-color: #ffffff;
+				opacity: 0.3;
+
+				@media #{$desktop} {
+					display: block;
+				}
+			}
+		}
+
+		& #{$root}__slogan {
+			flex-basis: 100%;
+			font-size: $font-size * 0.6875; // 1.1rem
+			line-height: 1;
+			font-weight: 300;
+			color: #ffffff;
+			text-align: center;
+
+			@media #{$desktop} {
+				margin-bottom: 8rem;
+				font-size: $font-size * 1.375; // 2.2rem
 			}
 		}
 	}
 
-	&__slogan {
-		flex-basis: 100%;
-		font-size: $font-size * 0.6875; // 1.1rem
-		line-height: 1;
-		font-weight: 300;
-		color: #ffffff;
-		text-align: center;
-
-		@media #{$desktop} {
-			margin-bottom: 8rem;
-
-			font-size: $font-size * 1.375; // 2.2rem
+	&--info {
+		& #{$root}__container {
+			flex-direction: column;
 		}
 	}
 }

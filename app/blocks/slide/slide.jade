@@ -1,6 +1,12 @@
-mixin slide(arr, i)
-	+b('li')(class='slide--#{i + 1} js_slide')&attributes(attributes)
+mixin slide(item, index)
+	+b('li')(class='slide--#{index + 1} --#{item.modifier} js_slide')&attributes(attributes)
 		+e.container-fluid
 			+e.container
-				+e('header').heading !{arr.heading}
-				+e('span').slogan !{arr.slogan}
+				case item.modifier
+					when 'promo'
+						+e('header').heading !{item.heading}
+						+e('span').slogan !{item.slogan}
+					when 'info'
+						+e('header').heading !{item.heading}
+						+e('p').body !{item.body}
+						+e('span').date !{item.date}

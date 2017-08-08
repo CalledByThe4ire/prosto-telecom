@@ -1,0 +1,18 @@
+[
+  {
+    "inputType": "radio",
+    "modifier": "news",
+    "name": "info-toggle",
+    "isChecked": true,
+    "isDisabled": false,
+    "label": "Новости"
+  },
+  {
+    "inputType": "radio",
+    "modifier": "issues",
+    "name": "info-toggle",
+    "isChecked": false,
+    "isDisabled": false,
+    "label": "Публикации"
+  }
+]
