@@ -1,5 +1,5 @@
 include ../input-toggle/input-toggle
-include ../slider/slider
+include ../carousel/carousel
 
 
 mixin info()
@@ -8,10 +8,10 @@ mixin info()
 			+input-toggle(getData('info-toggle'))(class='--info-toggle')
 		+e('div').content
 			+e('div').news--visible
-				+slider(getData('news-slides'))(data-js='info-slider', class='--info js_slider')
+				+carousel(getData('news-slides'))(data-js='news-carousel', class='--info')
 				+e('button')(onclick='return false').btn--load-more
 					| Еще новости
 			+e('div').issues
-				+slider(getData('issues-slides'))(data-js='info-slider', class='--info js_slider')
+				+carousel(getData('issues-slides'))(data-js='issues-carousel', class='--info')
 				+e('button')(onclick='return false').btn--load-more
 					| Еще публикации

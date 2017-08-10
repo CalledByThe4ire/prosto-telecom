@@ -9,7 +9,7 @@ include ../blocks/breadcrumbs/breadcrumbs
 
 //- main-content
 include ../blocks/main-content/main-content
-include ../blocks/slider/slider
+include ../blocks/carousel/carousel
 include ../blocks/plans/plans
 include ../blocks/info/info
 
@@ -20,7 +20,7 @@ block content
 	+page-header
 		+offers
 	+main-content
-		+slider(getData('promo-slides'))(data-js='promo-slider', class='--promo')
+		+carousel(getData('promo-slides'))(data-js='promo-carousel', class='--promo')
 		//- +plans(getData('plans-list'))
 		//- +info
 
