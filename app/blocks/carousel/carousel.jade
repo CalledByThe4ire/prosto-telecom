@@ -1,6 +1,6 @@
 include ../slide/slide
 
 mixin carousel(list)
-	+b('ul').carousel&attributes(attributes)
+	+b('div').carousel&attributes(attributes)
 		each item, index in list
-			+slide(item, index)(data-js='carousel-cell', class='__cell')
+			+slide(item, index)(class='__cell')

@@ -1,7 +1,9 @@
 .carousel {
 	$root: &;
 
-	@include list-clear();
+	&__cell {
+		// width: 100%;
+	}
 
 	// &__prev,
 	// &__next {

@@ -1,5 +1,5 @@
 mixin slide(item, index)
-	+b('li')(class='slide--#{index + 1} --#{item.modifier}')&attributes(attributes)
+	+b('div')(class='slide--#{index + 1} --#{item.modifier}')&attributes(attributes)
 		+e.container-fluid
 			+e.container
 				case item.modifier

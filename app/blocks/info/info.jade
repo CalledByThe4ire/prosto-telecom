@@ -8,10 +8,10 @@ mixin info()
 			+input-toggle(getData('info-toggle'))(class='--info-toggle')
 		+e('div').content
 			+e('div').news--visible
-				+carousel(getData('news-slides'))(data-js='news-carousel', class='--info')
+				+carousel(getData('news-slides'))(class='--news')
 				+e('button')(onclick='return false').btn--load-more
 					| Еще новости
 			+e('div').issues
-				+carousel(getData('issues-slides'))(data-js='issues-carousel', class='--info')
+				+carousel(getData('issues-slides'))(class='--issues')
 				+e('button')(onclick='return false').btn--load-more
 					| Еще публикации

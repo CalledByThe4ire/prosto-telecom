@@ -1,7 +1,5 @@
 import Flickity from 'flickity';
 
-export default window.addEventListener(`DOMContentLoaded`, () => {
-  const flkty = new Flickity(`[data-js='promo-carousel']`, {
-    cellSelector: `[data-js='carousel-cell']`
-  });
+export const flkty = new Flickity(`.carousel`, {
+  cellSelector: `.carousel__cell`
 });
