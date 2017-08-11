@@ -66,6 +66,7 @@
 
 	@include padding-x($padding-x);
 	@include padding-y($padding-y);
+	min-width: 350px;
 
 	font-size: $font-size;
 	line-height: 1;

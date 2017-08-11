@@ -3,7 +3,15 @@
 
 	&__container {
 		@include container();
+
+		@include padding-x($offset--mobile);
 		display: flex;
+		flex-basis: 100%;
+		flex-wrap: wrap;
+
+		@media #{$desktop} {
+			@include padding-x(0);
+		}
 	}
 
 	&__container-fluid {
@@ -16,16 +24,13 @@
 		& #{$root}__container {
 			z-index: 10;
 
-			flex-wrap: wrap;
 			justify-content: center;
-			width: 100%;
 		}
 
 		& #{$root}__container-fluid {
 			position: relative;
 			z-index: 0;
 
-			flex-direction: column;
 			justify-content: center;
 			min-height: 55px;
 
@@ -44,9 +49,11 @@
 				bottom: 0;
 				left: 0;
 				z-index: 5;
+
 				display: block;
 				width: 100%;
 				height: 100%;
+
 				background-color: #000000;
 				opacity: 0.5;
 
@@ -74,8 +81,7 @@
 			}
 		}
 
-		& #{$root}__heading,
-		& #{$root}__slogan {
+		& #{$root}__heading, & #{$root}__slogan {
 			@media #{$desktop} {
 				text-shadow: 0 0 2rem #000000;
 			}
@@ -96,9 +102,11 @@
 
 			&::after {
 				content: "";
+
 				position: absolute;
 				left: 0;
 				bottom: 0;
+
 				display: none;
 				height: 1px;
 				width: 100%;
@@ -121,7 +129,69 @@
 
 			@media #{$desktop} {
 				margin-bottom: 8rem;
+
 				font-size: $font-size * 1.375; // 2.2rem
+			}
+		}
+	}
+
+	&--info {
+		@media #{$desktop} {
+			margin-right: $offset--desktop;
+
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+		& #{$root}__container {
+			flex-direction: column;
+		}
+
+		& #{$root}__container-fluid {
+			position: relative;
+		}
+
+		& #{$root}__heading {
+			margin-bottom: 1rem;
+
+			font-size: $font-size;
+			line-height: 1.125; // 1.8rem
+			font-weight: 500;
+			color: $color-primary;
+
+			@media #{$desktop} {
+				font-size: $font-size * 1.125; // 1.8rem
+				line-height: 1.375; // 2.2rem
+			}
+		}
+
+		& #{$root}__body {
+			margin: 0;
+			margin-bottom: 1rem;
+			padding: 0;
+
+			font-size: $font-size * 0.875; // 1.4rem
+			line-height: 1.285714285714286; // 1.8rem
+			font-weight: 300;
+			color: $text-color;
+
+			@media #{$desktop} {
+				margin-bottom: 3.5rem;
+
+				font-size: $font-size;
+				line-height: 1.375; // 2.2rem
+			}
+		}
+
+		& #{$root}__date {
+			font-size: $font-size * 0.75; // 1.2rem
+			line-height: 1.33; // 1.6rem
+			font-weight: 400;
+			color: lighten($text-color, 50%);
+
+			@media #{$desktop} {
+				font-size: $font-size * 0.875; // 1.4rem
+				line-height: 1.142857142857143; // 1.6rem
 			}
 		}
 	}

@@ -1,11 +1,42 @@
 .flickity {
 	&-page-dots {
+		position: absolute;
+		left: 0;
+
 		@include list-clear();
+		justify-content: center;
+		align-items: center;
+		min-height: 20px;
+		width: 100%;
+
+		& > .dot {
+			width: 8px;
+			height: 8px;
+			margin-right: 1.5rem;
+
+			&:last-child {
+				margin-right: 0;
+			}
+
+			border-width: 4px;
+			border-style: solid;
+			border-color: transparent;
+			border-radius: 50%;
+
+			transition-duration: 0.3s;
+			cursor: pointer;
+
+			&:hover {
+				width: 16px;
+				height: 16px;
+			}
+		}
 	}
 
 	&-prev-next-button {
 		background: none;
 		border: none;
+
 		cursor: pointer;
 
 		& svg {
@@ -18,6 +49,17 @@
 	position: relative;
 	$root: &;
 
+	&::after {
+		// enable / disable carousel
+		// https://flickity.metafizzy.co/options.html#watchcss
+		content: "flickity";
+		display: none;
+
+		@media #{$desktop} {
+			content: "";
+		}
+	}
+
 	&__cell {
 		width: 100%;
 	}
@@ -25,37 +67,24 @@
 	&--promo {
 		& .flickity {
 			&-page-dots {
-				position: absolute;
 				display: none;
 
-				@include list-clear();
-
 				@media #{$desktop} {
-					display: flex;
-					min-height: 20px;
 					bottom: 160px;
-					right: 50%;
-					transform: translateX(50%);
+
+					display: flex;
 				}
 
 				& > .dot {
-					width: 8px;
-					height: 8px;
-					margin-right: 1.5rem;
 					background-color: #ffffff;
-					border-width: 4px;
-					border-style: solid;
-					border-color: transparent;
-					border-radius: 50%;
-					cursor: pointer;
+
+					&.is-selected {
+						background-color: $color-secondary;
+					}
 
 					&:hover {
-						width: 16px;
-						height: 16px;
 						background-color: transparent;
 						border-color: $color-secondary;
-						transform: translateY(-25%);
-						transition-duration: 0.3s;
 					}
 				}
 			}
@@ -85,6 +114,40 @@
 
 					@media #{$desktop} {
 						right: $offset--desktop * 1.5; // 4.5rem
+					}
+				}
+			}
+		}
+	}
+
+	&--info {
+		@media #{$desktop} {
+			@include container();
+			display: flex;
+			justify-content: center;
+			margin-bottom: 5rem;
+		}
+
+		& .flickity {
+			&-viewport {
+				min-height: 130px;
+			}
+
+			&-page-dots {
+				bottom: 0;
+
+				display: flex;
+
+				& > .dot {
+					background-color: lighten($text-color, 50%);
+
+					&.is-selected {
+						background-color: $color-primary;
+					}
+
+					&:hover {
+						background-color: transparent;
+						border-color: $color-primary;
 					}
 				}
 			}

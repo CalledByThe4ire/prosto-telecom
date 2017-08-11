@@ -1,19 +1,52 @@
 .info {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
+	&__fieldset {
+		display: flex;
+		justify-content: center;
+		margin-bottom: 2rem;
+
+		@media #{$desktop} {
+			margin-bottom: 4rem;
+		}
+	}
 
 	&__news,
 	&__issues {
 		position: relative;
 
 		display: none;
-		flex-direction: column;
-		flex-wrap: wrap;
+		width: 100%;
 
 		&--visible {
-			display: flex;
+			display: block;
+		}
+	}
+
+	&__btn {
+		display: none;
+
+		@media #{$desktop} {
+			@include btn(3rem);
+			@include margin-x(auto);
+
+			font-size: $font-size * 1.125; // 1.8rem
+			color: $color-primary;
+
+			border: 3px solid $color-primary;
+			background-color: transparent;
+
+			&:hover {
+				@media #{$desktop} {
+					color: lighten($color-primary, 15%);
+					border: 3px solid lighten($color-primary, 15%);
+				}
+			}
+
+			&:active {
+				color: lighten($color-primary, 15%);
+
+				background-color: $color-secondary;
+				box-shadow: 0 0 5px lighten($color-primary, 15%);
+			}
 		}
 	}
 }
