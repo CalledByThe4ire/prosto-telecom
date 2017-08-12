@@ -1,3 +1,5 @@
+// see also carousel.scss:48
+
 import utils from '../../scripts/utils';
 import Flickity from 'flickity';
 
