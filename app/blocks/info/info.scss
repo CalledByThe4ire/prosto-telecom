@@ -9,6 +9,14 @@
 		}
 	}
 
+	&__content {
+		margin-bottom: 3rem;
+
+		@media #{$desktop} {
+			margin-bottom: 5rem;
+		}
+	}
+
 	&__item {
 		position: relative;
 
