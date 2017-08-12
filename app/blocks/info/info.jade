@@ -5,13 +5,13 @@ include ../carousel/carousel
 mixin info()
 	+b.info(data-js='info')&attributes(attributes)
 		+e.fieldset--toggle(role='group')
-			+input-toggle(getData('info-toggle'))(class='--info-toggle')
+			+input-toggle(getData('info-toggle'))(data-js='info-toggle', class='--info-toggle')
 		+e('div').content
-			+e('div').news--visible
-				+carousel(getData('news-slides'))(class='--info')
+			+e('div').item--visible(data-js='info-item', data-modifier='news')
+				+carousel(getData('news-slides'))(class='--info', , data-flickity='{ "cellSelector": ".carousel__cell", "prevNextButtons": "false", "watchCSS": "true", "wrapAround": "true" }')
 				+e('button')(onclick='return false').btn--load-more
 					| Еще новости
-			+e('div').issues
+			+e('div').item(data-js='info-item', data-modifier='issues')
 				+carousel(getData('issues-slides'))(class='--info')
 				+e('button')(onclick='return false').btn--load-more
 					| Еще публикации
