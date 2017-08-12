@@ -20,7 +20,6 @@ const toggleCarousel = evt => {
     let flkty = new Flickity(carousel, {
       cellSelector: `.carousel__cell`,
       prevNextButtons: false,
-      watchCSS: true,
       wrapAround: true
     });
 
