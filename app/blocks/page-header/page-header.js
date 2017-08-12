@@ -27,14 +27,14 @@ export default window.addEventListener(`DOMContentLoaded`, () => {
         containerFluid.classList.add(`page-header__container-fluid--` + colorizedMod);
         containerFluid.classList.add(`page-header__container-fluid--` + absPosMod);
         pageHeader.classList.add(`page-header--` + colorizedMod);
-        logoLink.classList.remove(`page-header__link--` + visibleMod);
+        logoLink.classList.add(`page-header__link--` + colorizedMod);
         toggle.classList.add(`page-header__toggle--` + closeMod);
         break;
       case `desktop`:
         containerFluid.classList.remove(`page-header__container-fluid--` + colorizedMod);
         containerFluid.classList.remove(`page-header__container-fluid--` + absPosMod);
         pageHeader.classList.remove(`page-header--` + colorizedMod);
-        logoLink.classList.add(`page-header__link--` + visibleMod);
+        logoLink.classList.remove(`page-header__link--` + colorizedMod);
         toggle.classList.remove(`page-header__toggle--` + closeMod);
         break;
     }

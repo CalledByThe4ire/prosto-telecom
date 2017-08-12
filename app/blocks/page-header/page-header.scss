@@ -56,18 +56,17 @@
 	}
 
 	&__link {
-		display: none;
+		// $link: &;
+		display: block;
 
 		@include retina-sprite($logo_group);
 
 		text-indent: -9999999px;
 
-		@media #{$desktop} {
-			display: block;
-		}
+		cursor: pointer;
 
-		&--visible {
-			display: block;
+		&--colorized {
+			@include retina-sprite($logo_colorized_group);
 		}
 	}
 
