@@ -9,9 +9,12 @@ include ../blocks/breadcrumbs/breadcrumbs
 
 //- main-content
 include ../blocks/main-content/main-content
-//- include ../blocks/carousel/carousel
+include ../blocks/carousel/carousel
 include ../blocks/plans/plans
 include ../blocks/info/info
+
+//- template
+include ../blocks/template/template
 
 block head
 	- var pageTitle = 'Prosto Telecom';
@@ -23,4 +26,6 @@ block content
 		+carousel(getData('promo-slides'))(class='--promo', data-flickity='{"selectedAttraction": "0.2", "friction": "0.8"}')
 		+plans(getData('plans-list'))
 		+info
+
+	+template
 

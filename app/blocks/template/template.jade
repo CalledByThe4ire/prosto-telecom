@@ -1,0 +1,8 @@
+mixin template()
+	+b.template(data-js='template')
+			+b('div').slide(class='__cell --%modifier%')
+				+e.container-fluid
+					+e.container
+						+e('header').heading %heading%
+						+e('p').body %body%
+						+e('span').date %date%

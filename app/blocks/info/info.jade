@@ -1,5 +1,4 @@
 include ../input-toggle/input-toggle
-include ../carousel/carousel
 
 
 mixin info()
@@ -8,10 +7,12 @@ mixin info()
 			+input-toggle(getData('info-toggle'))(data-js='info-toggle', class='--info-toggle')
 		+e('div').content
 			+e('div').item--visible(data-js='info-item', data-modifier='news')
-				+carousel(getData('news-slides'))(class='--info', , data-flickity='{ "cellSelector": ".carousel__cell", "prevNextButtons": "false", "watchCSS": "true", "wrapAround": "true" }')
+				+b('div').carousel--info(data-flickity='{ "cellSelector": ".carousel__cell", "prevNextButtons": "false", "watchCSS": "true", "wrapAround": "true" }')
+					block
 				+e('button')(onclick='return false').btn--load-more
 					| Еще новости
 			+e('div').item(data-js='info-item', data-modifier='issues')
-				+carousel(getData('issues-slides'))(class='--info')
+				+b('div').carousel--info
+					block
 				+e('button')(onclick='return false').btn--load-more
 					| Еще публикации
