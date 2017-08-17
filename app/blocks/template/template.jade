@@ -1,8 +1,7 @@
 mixin template()
-	+b('template').template(data-js='template')
-			+b('div').slide(class='--%modifier% carousel__cell')
-				+e.container-fluid
-					+e.container
-						+e('header').heading %heading%
-						+e('p').body %body%
-						+e('span').date %date%
+	+b('template').slide(data-js='template', class='template')
+			+e.container-fluid
+				+e.container
+					+e('header').heading %heading%
+					+e('p').body %body%
+					+e('span').date %date%

@@ -1,5 +1,5 @@
 // template
-import '../blocks/template/template.js';
+// import '../blocks/template/template.js';
 
 // page-header
 import '../blocks/offers/offers.js';
