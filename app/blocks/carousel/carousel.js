@@ -1,9 +1,11 @@
-// see also carousel.scss:48
-
 import utils from '../../scripts/utils';
 import Flickity from 'flickity';
 
 export default window.addEventListener(`DOMContentLoaded`, () => {
+  // media queries
+  const mqlMobile = window.matchMedia(`only screen and (max-width: 1071px)`);
+  const mqlDesktop = window.matchMedia(`only screen and (min-width: 1072px)`);
+
   // carousel
   const carouselsCollection = utils.$$(`.carousel`);
   let flkty = new Flickity(`.carousel`, { cellSelector: `.carousel__cell` });
@@ -16,7 +18,6 @@ export default window.addEventListener(`DOMContentLoaded`, () => {
   const infoFlickity = {
     cellSelector: `.carousel__cell`,
     prevNextButtons: false,
-    watchCSS: true,
     wrapAround: true
   };
 
@@ -28,22 +29,49 @@ export default window.addEventListener(`DOMContentLoaded`, () => {
   const slideToClone = templateElement.innerHTML;
 
   /**
-   * Generates and returns the HTML
-   * @param {Object.<Object>} dataObject
-   * @return {String}
+   * Creates carousel's cell
+   * @param {HTMLElement} template
+   * @return {HTMLElement}
    */
-  const fillCarouselWithContent = dataObject => {
+  const createCell = (template) => {
+    let element = document.createElement(`div`);
+    element.classList = `slide slide--info carousel__cell`;
+    element.innerHTML = slideToClone
+      .replace(/%heading%/g, template[`heading`])
+      .replace(/%body%/g, template[`body`])
+      .replace(/%date%/g, template[`date`]);
+    return element;
+  };
+
+  /**
+   * Generates sliders' content for mobile
+   * @param {Object.<Object>} dataObject
+   * @return {Array.<HTMLElement>}
+   */
+  const getContentForMobile = dataObject => {
     let carouselContent = [];
     const dataArray = Object.keys(dataObject).map(item => dataObject[item]);
 
     dataArray.forEach(item => {
-      let cell = document.createElement(`div`);
-      cell.classList = `slide slide--info carousel__cell`;
-      cell.innerHTML = slideToClone
-        .replace(/%heading%/g, item[`heading`])
-        .replace(/%body%/g, item[`body`])
-        .replace(/%date%/g, item[`date`]);
+      let cell = createCell(item);
       carouselContent.push(cell);
+    });
+
+    return carouselContent;
+  };
+
+  /**
+   * Generates sliders' content for desktop
+   * @param {Object.<Object>} dataObject
+   * @return {String}
+   */
+  const getContentForDesktop = dataObject => {
+    let carouselContent = ``;
+    const dataArray = Object.keys(dataObject).map(item => dataObject[item]);
+
+    dataArray.forEach(item => {
+      let cell = createCell(item);
+      carouselContent += cell.outerHTML;
     });
 
     return carouselContent;
@@ -60,6 +88,25 @@ export default window.addEventListener(`DOMContentLoaded`, () => {
     }
   });
 
+  /**
+  * Enable / disable carousel for different viewports
+  */
+  const matchMedia = () => {
+    if (mqlDesktop.matches) {
+      flkty.destroy();
+    }
+
+    if (mqlMobile.matches) {
+      flkty = new Flickity(`.carousel--info`, infoFlickity);
+    }
+  };
+
+  matchMedia();
+
+  window.addEventListener(`resize`, () => {
+    matchMedia();
+  });
+
   // Ajax Call
   const xhr = new XMLHttpRequest();
   xhr.onreadystatechange = () => {
@@ -71,7 +118,12 @@ export default window.addEventListener(`DOMContentLoaded`, () => {
       } else {
         // Convert JSON string response to an Object
         const dataObject = JSON.parse(xhr.responseText);
-        flkty.append(fillCarouselWithContent(dataObject));
+        if (mqlMobile.matches) {
+          flkty.append(getContentForMobile(dataObject));
+        }
+        if (mqlDesktop.matches) {
+          document.querySelector(`.carousel--info`).innerHTML = getContentForDesktop(dataObject);
+        }
       }
     }
   };

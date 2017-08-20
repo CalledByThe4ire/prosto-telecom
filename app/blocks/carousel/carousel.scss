@@ -49,17 +49,6 @@
 	position: relative;
 	$root: &;
 
-	&::after {
-		// enable / disable carousel
-		// https://flickity.metafizzy.co/options.html#watchcss
-		content: "flickity";
-		display: none;
-
-		@media #{$desktop} {
-			content: "";
-		}
-	}
-
 	&__cell {
 		width: 100%;
 	}
