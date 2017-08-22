@@ -141,9 +141,13 @@ export default window.addEventListener(`DOMContentLoaded`, () => {
   xhr.setRequestHeader(`Access-Control-Allow-Origin`, `*`);
   xhr.send();
 
+  /**
+   * Re-enables flickity instance after toggling
+   * @param {MouseEvent} evt
+   */
   const toggleCarousel = evt => {
     carouselsCollection.forEach(carousel => {
-      if (evt.target.dataset.modifier === carousel.parentElement.dataset.modifier) {
+      if (evt.target.dataset.modifier && evt.target.dataset.modifier === carousel.parentElement.dataset.modifier) {
         if (mqlMobile.matches) {
           infoFlkties[evt.target.dataset.modifier].destroy();
           infoFlkties[evt.target.dataset.modifier] = new Flickity(carousel, infoFlickity);
