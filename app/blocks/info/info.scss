@@ -24,6 +24,7 @@
 		width: 100%;
 
 		&--visible {
+			@include container();
 			display: block;
 		}
 	}

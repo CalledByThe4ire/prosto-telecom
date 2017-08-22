@@ -17,12 +17,10 @@
 			&:last-child {
 				margin-right: 0;
 			}
-
 			border-width: 4px;
 			border-style: solid;
 			border-color: transparent;
 			border-radius: 50%;
-
 			transition-duration: 0.3s;
 			cursor: pointer;
 
@@ -36,7 +34,6 @@
 	&-prev-next-button {
 		background: none;
 		border: none;
-
 		cursor: pointer;
 
 		& svg {
@@ -60,7 +57,6 @@
 
 				@media #{$desktop} {
 					bottom: 160px;
-
 					display: flex;
 				}
 
@@ -111,10 +107,14 @@
 
 	&--info {
 		@media #{$desktop} {
-			@include container();
 			display: flex;
-			justify-content: center;
+			flex-wrap: wrap;
+			justify-content: space-between;
 			margin-bottom: 5rem;
+
+			& #{$root}__cell {
+				width: calc(#{percentage(1/3)} - 3rem);
+			}
 		}
 
 		& .flickity {
@@ -124,7 +124,6 @@
 
 			&-page-dots {
 				bottom: 0;
-
 				display: flex;
 
 				& > .dot {

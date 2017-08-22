@@ -139,7 +139,11 @@
 		@media #{$desktop} {
 			margin-right: $offset--desktop;
 
-			&:last-child {
+			&:nth-child(n+4) {
+				margin-top: $offset--desktop;
+			}
+
+			&:nth-child(3n) {
 				margin-right: 0;
 			}
 		}
